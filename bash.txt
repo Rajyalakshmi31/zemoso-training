@@ -1,0 +1,357 @@
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~ (master)
+$ mkdir first_git_repo
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~ (master)
+$ cd first_git_repo
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~/first_git_repo (master)
+$ touch hello_world.txt
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~/first_git_repo (master)
+$ vi hello_world.txt
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~/first_git_repo (master)
+$ git add hello_world.txt
+warning: in the working copy of 'first_git_repo/hello_world.txt', LF will be replaced by CRLF the next time Git to
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~/first_git_repo (master)
+$ git commit -m "Commit-1"
+[master 2bbd324] Commit-1
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (master)
+$ git remote add origin https://github.com/Rajyalakshmi31/zemoso-training.git
+error: remote origin already exist
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (master)
+$ git remote set-url origin https://github.com/Rajyalakshmi31/zemoso-training.git
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (master)
+$ git push -u origin master
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (11/11), 2.04 KiB | 1.02 MiB/s, done.
+Total 11 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/Rajyalakshmi31/zemoso-training/pull/new/master
+remote:
+To https://github.com/Rajyalakshmi31/zemoso-training.git
+ * [new branch]      master -> master
+branch 'master' set up to track 'origin/master'.
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (master)
+$ git checkout master
+Already on 'master'
+Your branch is up to date with 'origin/master'.
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (master)
+$ git branch main master -f
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (master)
+$ git checkout main
+Switched to branch 'main'
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git push origin main -f
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Rajyalakshmi31/zemoso-training.git
+ + fb3786d...8c015f2 main -> main (forced update)
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ cat hello_world.txt
+Git development began in April 2005 after many developers of the Linux kernel gave up access to BitKeeper, a proprietary source control management system that had previously been used to maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty seconds to apply a patch and update all associated metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching to take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set out to write his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git grep -l ' to ' | xargs sed -i 's/ to /Rajyalakshmi/g' hello_world.txt
+
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git diff hello_world.txt
+warning: in the working copy of 'first_git_repo/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/first_git_repo/hello_world.txt b/first_git_repo/hello_world.txt
+index bab22f2..cfa2fa8 100644
+--- a/first_git_repo/hello_world.txt
++++ b/first_git_repo/hello_world.txt
+@@ -1 +1 @@
+-Git development began in April 2005 after many developers of the Linux kernel gave up access to BitKeeper, a proprietary source control management system that had previously been used to maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty seconds to apply a patch and update all associated metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching to take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set out to write his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
++Git development began in April 2005 after many developers of the Linux kernel gave up accessRajyalakshmiBitKeeper, a proprietary source control management system that had previously been usedRajyalakshmimaintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty secondsRajyalakshmiapply a patch and update all associated metadata, and noted that this would not scaleRajyalakshmithe needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patchingRajyalakshmitake three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what notRajyalakshmido; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set outRajyalakshmiwrite his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patchesRajyalakshmithe Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005RajyalakshmiJunio Hamano, a major contributorRajyalakshmithe project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git commit -m "committed"
+warning: could not open directory 'AppData/Local/Application Data/': Permission denied
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Start Menu/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   hello_world.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.bash_history
+        ../.cache/
+        ../.eclipse/
+        ../.gitconfig
+        ../.gitignore
+        ../.idlerc/
+        ../.ipython/
+        ../.jupyter/
+        ../.lesshst
+        ../.matplotlib/
+        ../.p2/
+        ../.packettracer
+        ../.viminfo
+        ../.vscode/
+        ../3D Objects/
+        ../AppData/
+        ../BullseyeCoverageError.txt
+        ../Cisco Packet Tracer 7.3.0/
+        ../Contacts/
+        ../Desktop/
+        ../Documents/
+        ../Downloads/
+        ../Favorites/
+        ../IntelGraphicsProfiles/
+        ../Links/
+        ../Music/
+        ../NTUSER.DAT
+        ../NTUSER.DAT{1c2b59c6-c5f5-11eb-bacb-000d3a96488e}.TM.blf
+        ../NTUSER.DAT{1c2b59c6-c5f5-11eb-bacb-000d3a96488e}.TMContainer00000000000000000001.regtrans-ms
+        ../NTUSER.DAT{1c2b59c6-c5f5-11eb-bacb-000d3a96488e}.TMContainer00000000000000000002.regtrans-ms
+        ../OneDrive/
+        ../Pictures/
+        ../Saved Games/
+        ../Searches/
+        ../Videos/
+        ../eclipse/
+        ../file
+        ../file1.txt
+        ../gitkatas/
+        ../ntuser.dat.LOG1
+        ../ntuser.dat.LOG2
+        ../ntuser.ini
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git add hello_world.txt
+warning: in the working copy of 'first_git_repo/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git commit -m "committed"
+[main da34ef2] committed
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git push origin main -f
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 487 bytes | 487.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Rajyalakshmi31/zemoso-training.git
+ + 10fedea...da34ef2 main -> main (forced update)
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git reflog
+da34ef2 (HEAD -> main, origin/main) HEAD@{0}: commit: committed
+8c015f2 (origin/master, master) HEAD@{1}: checkout: moving from master to main
+8c015f2 (origin/master, master) HEAD@{2}: checkout: moving from master to master
+8c015f2 (origin/master, master) HEAD@{3}: commit: initial commit
+006be6b HEAD@{4}: commit: intitail commit
+9d14f4b HEAD@{5}: commit (initial): file added
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git revert da34ef2
+warning: could not open directory 'AppData/Local/Application Data/': Permission denied
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Start Menu/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+hint: Waiting for your editor to close the file... unix2dos: converting file C:/Users/Rajya Lakshmi/.git/COMMIT_EDITMSG to DOS format...
+dos2unix: converting file C:/Users/Rajya Lakshmi/.git/COMMIT_EDITMSG to Unix format...
+[main e7f94d2] Revert "committed"
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ cat hello_world.txt
+Git development began in April 2005 after many developers of the Linux kernel gave up access to BitKeeper, a proprietary source control management system that had previously been used to maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Torvalds wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Torvalds took an example of an SCM system requiring thirty seconds to apply a patch and update all associated metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching to take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Torvalds set out to write his own.[8] Torvalds has quipped about the name git, which is British English slang meaning "unpleasant person". Torvalds said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Torvalds achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Torvalds turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git add hello_world.txt
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git commit -m "commiting.."
+warning: could not open directory 'AppData/Local/Application Data/': Permission denied
+warning: could not open directory 'Application Data/': Permission denied
+warning: could not open directory 'Cookies/': Permission denied
+warning: could not open directory 'Local Settings/': Permission denied
+warning: could not open directory 'My Documents/': Permission denied
+warning: could not open directory 'NetHood/': Permission denied
+warning: could not open directory 'PrintHood/': Permission denied
+warning: could not open directory 'Recent/': Permission denied
+warning: could not open directory 'SendTo/': Permission denied
+warning: could not open directory 'Start Menu/': Permission denied
+warning: could not open directory 'Templates/': Permission denied
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../.bash_history
+        ../.cache/
+        ../.eclipse/
+        ../.gitconfig
+        ../.gitignore
+        ../.idlerc/
+        ../.ipython/
+        ../.jupyter/
+        ../.lesshst
+        ../.matplotlib/
+        ../.p2/
+        ../.packettracer
+        ../.viminfo
+        ../.vscode/
+        ../3D Objects/
+        ../AppData/
+        ../BullseyeCoverageError.txt
+        ../Cisco Packet Tracer 7.3.0/
+        ../Contacts/
+        ../Desktop/
+        ../Documents/
+        ../Downloads/
+        ../Favorites/
+        ../IntelGraphicsProfiles/
+        ../Links/
+        ../Music/
+        ../NTUSER.DAT
+        ../NTUSER.DAT{1c2b59c6-c5f5-11eb-bacb-000d3a96488e}.TM.blf
+        ../NTUSER.DAT{1c2b59c6-c5f5-11eb-bacb-000d3a96488e}.TMContainer00000000000000000001.regtrans-ms
+        ../NTUSER.DAT{1c2b59c6-c5f5-11eb-bacb-000d3a96488e}.TMContainer00000000000000000002.regtrans-ms
+        ../OneDrive/
+        ../Pictures/
+        ../Saved Games/
+        ../Searches/
+        ../Videos/
+        ../eclipse/
+        ../file
+        ../file1.txt
+        ../gitkatas/
+        ../ntuser.dat.LOG1
+        ../ntuser.dat.LOG2
+        ../ntuser.ini
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git branch
+* main
+  master
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git branch new_branch
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git branch
+* main
+  master
+  new_branch
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ ls
+hello_world.txt
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (main)
+$ git checkout new_branch
+Switched to branch 'new_branch'
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ ls
+hello_world.txt
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ git grep -l ' to ' | xargs sed -i 's/ Torvalds / Rajyalakshmi /g' hello_world.txt
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ cat hello_world.txt
+Git development began in April 2005 after many developers of the Linux kernel gave up access to BitKeeper, a proprietary source control management system that had previously been used to maintain the project.[10] The copyright holder of BitKeeper, Larry McVoy, had withdrawn gratis use of the product after claiming that Andrew Tridgell had reverse-engineered the BitKeeper protocols. Rajyalakshmi wanted a distributed system that he could use like BitKeeper, but none of the available free systems met his needs, particularly in terms of performance. Rajyalakshmi took an example of an SCM system requiring thirty seconds to apply a patch and update all associated metadata, and noted that this would not scale to the needs of Linux kernel development, where syncing with fellow maintainers could require 250 such actions at a time. He wanted patching to take three seconds,[6] and had several other design criteria in mind: take Concurrent Versions System (CVS) as an example of what not to do; if in doubt, make the exact opposite decision[8] support a distributed, BitKeeper-like workflow[8] very strong safeguards against corruption, either accidental or malicious.[7] These three criteria eliminated every then-existing version control system, except for Monotone. Considering performance excluded this too.[8] So immediately after the 2.6.12-rc2 Linux kernel development release,[8] Rajyalakshmi set out to write his own.[8] Rajyalakshmi has quipped about the name git, which is British English slang meaning "unpleasant person". Rajyalakshmi said: "I'm an egotistical bastard, and I name all my projects after myself. First 'Linux', now 'git'."[11][12] The man page describes Git as "the stupid content tracker".[13] The development of Git began on 3 April 2005.[14] The project was announced on 6 April,[15] and became self-hosting as of 7 April.[14] The first merge of multiple branches was done on 18 April.[16] Rajyalakshmi achieved his performance goals; on 29 April, the nascent Git was benchmarked recording patches to the Linux kernel tree at the rate of 6.7 per second.[17] On 16 June Git managed the kernel 2.6.12 release.[18] Rajyalakshmi turned over maintenance on 26 July 2005 to Junio Hamano, a major contributor to the project.[19] Hamano was responsible for the 1.0 release on 21 December 2005, and remains the project's maintainer.[20]
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ git add hello_world.txt
+warning: in the working copy of 'first_git_repo/hello_world.txt', LF will be replaced by CRLF the next time Git touches it
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ git commit -m "committingggg..."
+[new_branch d263a50] committingggg...
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ git push origin new_branch -f
+Enumerating objects: 11, done.
+Counting objects: 100% (11/11), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 1022 bytes | 1022.00 KiB/s, done.
+Total 8 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 1 local object.
+remote:
+remote: Create a pull request for 'new_branch' on GitHub by visiting:
+remote:      https://github.com/Rajyalakshmi31/zemoso-training/pull/new/new_branch
+remote:
+To https://github.com/Rajyalakshmi31/zemoso-training.git
+ * [new branch]      new_branch -> new_branch
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/first_git_repo (new_branch)
+$ cd
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~ (new_branch)
+$ git checkout main
+Switched to branch 'main'
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~ (main)
+$ mkdir git_clone_repo
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~ (main)
+$ cd git_clone_repo
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/git_clone_repo (main)
+$ git clone https://github.com/Rajyalakshmi31/zemoso-training.git
+Cloning into 'zemoso-training'...
+remote: Enumerating objects: 21, done.
+remote: Counting objects: 100% (21/21), done.
+remote: Compressing objects: 100% (12/12), done.
+remote: Total 21 (delta 3), reused 19 (delta 2), pack-reused 0
+Receiving objects: 100% (21/21), done.
+Resolving deltas: 100% (3/3), done.
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/git_clone_repo (main)
+$ ls
+zemoso-training/
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/git_clone_repo (main)
+$ cd zemoso-training
+
+Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64 ~/git_clone_repo/zemoso-training (main)
+$ ls
+file.txt  first_git_repo/  helloworld/
+
+
