@@ -15,8 +15,8 @@ $ git add hello_world.txt
 warning: in the working copy of 'first_git_repo/hello_world.txt', LF will be replaced by CRLF the next time Git to
 
 Rajya Lakshmi@DESKTOP-J4SD3DU MINGW64  ~/first_git_repo (master)
-$ git commit -m "Commit-1"
-[master 2bbd324] Commit-1
+$ git commit -m "Commited"
+[master 2bbd324] Commited-1
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 
