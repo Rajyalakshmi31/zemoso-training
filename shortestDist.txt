@@ -1,0 +1,78 @@
+import java.util.*;
+public class Main {
+	static final int NO_PARENT = -1;	
+	static Set<Integer> path = new LinkedHashSet<>(); 
+	static Set<Integer> allDists = new TreeSet<>();
+	
+    static void shortestPath(int[][] adjacencyMatrix,  int src, int dest) { 
+        int n = adjacencyMatrix[0].length; 
+        int[] shortest = new int[n]; 
+        boolean[] visited = new boolean[n];
+        int[] parents = new int[n]; 
+        for (int v = 0; v < n; v++)  { 
+            shortest[v] = Integer.MAX_VALUE; 
+            visited[v] = false; 
+        } 
+        shortest[src] = 0; 
+        parents[src] = NO_PARENT; 
+        for (int i = 1; i < n; i++)  { 
+            int pre = -1; 
+            int min = Integer.MAX_VALUE; 
+            for (int v = 0;  v < n;  v++) { 
+                if (!visited[v] && shortest[v] < min) { 
+                    pre = v; 
+                    min = shortest[v]; 
+                } 
+            } 
+            if(pre==-1)
+            	return;
+            visited[pre] = true; 
+            for (int v = 0; v < n; v++)  { 
+                int dist = adjacencyMatrix[pre][v];                  
+                if (dist > 0 && ((min + dist) < shortest[v]))  { 
+                    parents[v] = pre; 
+                    shortest[v] = min + dist; 
+                } 
+            } 
+        }  
+        allDists.add(shortest[dest]);
+        addPath(dest, parents); 
+    } 
+    
+    static void addPath(int i,int[] parents)  { 	
+        if (i == NO_PARENT)        	
+            return;   	
+        addPath(parents[i], parents);             
+        path.add(i);
+    } 
+    
+    
+ 
+    public static void main(String[] args) { 
+		/*
+		 *     0
+		 *  10/ \3
+		 *   /   \
+		 *  1--1--4
+		 * 5|  8/ |2
+		 *  | /   |
+		 *  2--7--3
+		 */  	
+   	
+        int[][] adjacencyMatrix = new int[][] {
+            { 0,10, 0, 0, 3 },
+            { 10, 0, 5, 0, 1 },
+            { 0, 5, 0, 7, 8 },
+            { 0, 0, 7, 0, 2 },
+            { 3, 1, 8, 2, 0 }
+        };
+        
+        int src = 0, dest = 2;
+        shortestPath(adjacencyMatrix,src,dest); 
+       
+        
+        List<Integer> list = new ArrayList<Integer>(allDists); 
+        System.out.println("Shortest distance from source to destination :" + list.get(0));
+                 
+    } 
+}
